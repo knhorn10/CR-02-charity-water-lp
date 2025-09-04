@@ -60,12 +60,26 @@ section {
  padding: 60px 20px;
  border-radius: 0 0 16px 16px;
  background-color: #77a8bb; /* Give hero a blue background for contrast */
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 40px;
+ margin-bottom: 30px;
+}
+
+
+/* Hero section split into two columns using flexbox */
+.hero-text {
+ flex: 1;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
 }
 
 
 /* Make the headline bold and modern */
 .hero h1 {
- font-size: 2.5em;
+ font-size: 4em;
  font-weight: bold;
  letter-spacing: 1px;
  margin-bottom: 15px;
@@ -75,7 +89,7 @@ section {
 
 /* Style the subheadline */
 .hero p {
- font-size: 1.2em;
+ font-size: 2em;
  margin-top: 0;
  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
 }
@@ -83,9 +97,27 @@ section {
 
 /* Second subheadline in hero section - a bit smaller than the first */
 .hero .subheadline {
- font-size: 1em;      /* Smaller than the first subheadline */
+ font-size: 1.5em;      /* Smaller than the first subheadline */
  margin-top: 8px;
+ color: #003366;
  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+
+/* Style for hero image */
+.hero-image {
+ flex: 1;
+ display: flex;
+ justify-content: center;
+}
+
+
+/* Filler picture in hero section */
+.filler-pic {
+ width: 320px;
+ height: 320px;
+ object-fit: cover;
+ border-radius: 12px;
 }
 
 
@@ -143,11 +175,7 @@ h2 {
 }
 
 
-/* Change button color when hovered */
-.donate-button:hover {
- background-color: #159A48; /* Dark Green */
- transform: translateY(-2px) scale(1.04); /* Slight lift */
-}
+
 
 
 /* Add some spacing between sections */
@@ -161,42 +189,34 @@ section {
 .top-bar {
  display: flex;
  align-items: center;
- justify-content: space-between;
+ justify-content: space-evenly;
  background-color: #fff;      /* White background */
  padding: 0 0 0 0;           /* Remove gaps */
  margin: 0;                  /* No margin */
  border-radius: 0;           /* No rounded corners */
  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
  width: 100%;                /* Full width */
- min-height: 60px;           /* Ensure enough height */
+ min-height: 80px;           /* Ensure enough height */
  position: relative;
 }
 
 
 /* Logo image styles */
 .logo {
- height: 38px;               /* Set logo height */
- margin-right: 12px;         /* Space between logo and name */
+ height: 80px;               /* Set logo height */
+ margin-left: 60px;
+ margin-right: 20px;         /* Space between logo and nav-tabs */
  vertical-align: middle;
  /* The logo image is set in the HTML, not in CSS */
 }
 
 
-/* Brand name styles */
-.brand-name {
- font-size: 1.3em;
- font-weight: bold;
- color: #000000;             /* Primary yellow */
- letter-spacing: 1px;
- margin-right: 24px;
- font-family: 'Avenir', Arial, sans-serif;
-}
-
 
 /* Navigation tabs styles */
 .nav-tabs {
  display: flex;              /* Place tabs in a row */
- gap: 18px;                  /* Space between tabs */
+ gap: 40px;                  /* Space between tabs */
+ margin-right: 60px;
  background-color: #ffffff;
 }
 
@@ -247,7 +267,7 @@ section {
    margin-right: 0;
  }
  .nav-tabs {
-   gap: 10px;
+   gap: 2px;
    margin-top: 6px;
  }
 }
@@ -271,6 +291,7 @@ section {
  /* Make subheadline font size smaller */
  .hero p {
    font-size: 1em;
+   color: #003366;
  }
 
 
@@ -331,10 +352,10 @@ section {
 
 
 .three-pictures .picture {
- width: 100%;
- max-width: 340px;           /* Larger images */
- border-radius: 10px;
- box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
+ width: 100px; /* Small width for each picture */
+ height: 100px; /* Small height for each picture */
+ object-fit: cover;
+ border-radius: 8px;
 }
 
 
@@ -347,8 +368,8 @@ section {
   margin: 30px 0;
 }
 .three-pictures .picture {
-  width: 350px; /* Larger width */
-  height: 220px; /* Larger height */
+  width: 500px; /* Larger width */
+  height: 400px; /* Larger height */
   object-fit: cover;
   border-radius: 8px;
 }
@@ -369,50 +390,28 @@ section {
 }
 
 
+/* Two images side by side in call-to-action section */
+.two-pictures {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.side-pic {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
 /* Footer Styles */
 .footer {
- background-color: #2E9DF7; /* Primary blue */
- color: #fff;
+ background-color: #fff; /* Primary blue */
+ color: #003366;
  text-align: center;
  padding: 18px 10px;
  border-radius: 12px 12px 0 0;
  margin-top: 32px;
- font-size: 1em;
-}
-
-
-/* Coffee cup container centers the cup horizontally */
-.coffee-cup-container {
- display: flex;
- justify-content: flex-start;
- align-items: flex-start;
- margin: 40px 0 40px 30px;
-}
-
-
-/* Simple coffee cup shape using border-radius and background color */
-.coffee-cup {
- width: 320px;
- height: 400px;
- background: #FFF7E1;
- border-radius: 0 0 160px 160px / 0 0 80px 80px;
- position: relative;
- box-shadow: 0 8px 24px rgba(0,0,0,0.08);
- display: flex;
- flex-direction: column;
- align-items: center;
-}
-
-
-/* Cup text inside the cup */
-.cup-text {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- display: flex;
- flex-direction: column;
- justify-content: flex-start;
- align-items: center;
+ font-size: 2em;
 }
